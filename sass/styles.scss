@@ -1,6 +1,7 @@
-@import "normalize";
+@import "vendor/global";
+@import "config/global";
 
 body {
-		background-color:green;
-		border-right:yellow;
-	}
+  background-color: green;
+  border-right: yellow;
+}
