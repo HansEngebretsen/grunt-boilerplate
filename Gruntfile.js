@@ -1,10 +1,10 @@
 module.exports = function(grunt) {
 
-    // 1. All configuration goes here 
+    // 1. All configuration goes here
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        
+
 
         concat: {
             // 2. Configuration for concatinating files goes here.
@@ -13,17 +13,17 @@ module.exports = function(grunt) {
                        'js/libs/*.js', // All JS in the libs folder
                        'js/*.js'
                    ],
-                   dest: 'js/build/production.js',            
+                   dest: 'js/build/production.js',
             }
           },
-         
+
          uglify: {
             build: {
                 src: 'js/build/production.js',
                 dest: 'js/build/production.min.js'
             }
           },
-        
+
         imagemin: {
             dynamic: {
                 files: [{
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
                 files: {
                     'css/styles.css': 'sass/styles.scss'
                 }
-            } 
+            }
         },
          autoprefixer: {
             options: {
@@ -54,22 +54,22 @@ module.exports = function(grunt) {
                     'style.css': 'style.css'
                 }
             }
-            
+
         },
 
        watch: {
-           
+
                   options: { livereload: true },
-                
+
             scripts: {
-              files: ['js/*.js'],
+              files: ['js/**/*.js'],
               tasks: ['concat', 'uglify'],
               options: {
                 spawn: false,
               }
             },
             css: {
-              files: ['sass/*.scss'],
+              files: ['sass/**/*.scss'],
               tasks: ['sass', 'autoprefixer'],
               options: {
                 spawn: false,
@@ -82,11 +82,11 @@ module.exports = function(grunt) {
                 spawn: false,
               }
             }
-        
-        }
-        
 
-       
+        }
+
+
+
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.
