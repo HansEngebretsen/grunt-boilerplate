@@ -1,6 +1,15 @@
-/*
-  Global Typographic Styles
-*/
+/* ====================
+
+Global typographic styles and resets
+
+======================= */
+
+%antialiased {
+  font-smoothing: antialiased;
+  -webkit-font-smoothing:antialiased;
+}
+
+// Typographic Reset
 html {
   font-size: 18px;
 }
@@ -17,4 +26,25 @@ h1 {
 h2 {
   font-size: 0.75em;
   color: $dark-grey;
+}
+
+// Classes for different weights
+%sans-serif {
+  font-family:'Helvetica', 'Helvetica Nue', Arial, sans-serif;
+}
+%sans-serif-light {
+  @extend %sans-serif;
+  font-weight:100;
+}
+%sans-serif-bold {
+  @extend %sans-serif;
+  font-weight: 600;
+}
+%body-text {
+  @extend %sans-serif;
+  font-family:'Helvetica', 'Helvetica Nue', Arial, sans-serif;
+}
+%caps {
+  text-transform: uppercase;
+  letter-spacing:.03em;
 }
