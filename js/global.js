@@ -1,1 +1,0 @@
-var Universal = {}; // Global object
